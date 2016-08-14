@@ -14,14 +14,16 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
-
+            Console.WriteLine("Please enter the Centigrade with interger or real!");
+            double centigrade = Convert.ToDouble(Console.ReadLine());
+            double result = ConvertToFahrenheit(centigrade);
+            Console.WriteLine("The result of {0} Centigrade = {1} Fahrenheit ",centigrade,result);
         }
 
         public static double ConvertToFahrenheit(double c)
         {
-            //YOUR CODE HERE - convert celcius to fahrenheit
-            return 0;
+            double fahrenheit = 1.8 * c + 32;
+            return fahrenheit;
 
         }
     }

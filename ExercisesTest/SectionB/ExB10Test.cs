@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ExercisesTest
 {
     [TestClass]
-    public class ExB10_Test
+    public class ExB10Test
     {
         [TestMethod]
         public void ExB10_TestWithZero()

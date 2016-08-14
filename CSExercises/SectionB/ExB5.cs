@@ -16,13 +16,16 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            Console.WriteLine("Please input the value of x!");
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = CalculateY(x);
+            Console.WriteLine(y);
         }
 
         public static double CalculateY(double x)
         {
-            //YOUR CODE HERE
-            return 0;
+            double y = (5 * Math.Pow(x, 2)) - (4 * x) + 3;
+            return y;
         }
     }
 }

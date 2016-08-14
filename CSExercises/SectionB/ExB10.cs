@@ -1,4 +1,5 @@
 using System;
+using System.Numerics;
 
 namespace CSExercises
 {
@@ -19,14 +20,23 @@ namespace CSExercises
 
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
-
+            Console.WriteLine("Please enter the value of a:");
+            double a = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter the value of b:");
+            double b = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter the value of c:");
+            double c = Convert.ToDouble(Console.ReadLine());
+            double result = CalculateArea(a, b, c);
+            //Complex result = CalculateArea(a, b, c);
+            Console.WriteLine(result);
         }
 
         public static double CalculateArea(double a, double b, double c)
         {
-            //YOUR CODE HERE
-            return 0;
+            double s = (a + b + c) / 2;
+            double area = Math.Sqrt(s * (s - a) * (s - b) * (s - c));
+            //Complex area = Complex.Sqrt(s * (s - a) * (s - b) * (s - c));
+            return area;
         }
     }
 }

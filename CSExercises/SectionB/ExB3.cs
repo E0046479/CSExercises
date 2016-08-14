@@ -18,14 +18,21 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
-
+            Console.WriteLine("Please enter the salary!");
+            string salary = Console.ReadLine();
+            string netSalary = CalculateIncome(salary);
+            Console.WriteLine("The total net salary for {0} salary is {1}", salary, netSalary);
         }
 
         public static string CalculateIncome(string salaryStr)
         {
-            //YOUR CODE HERE
-            return null;
+            double salary = Convert.ToDouble(salaryStr);
+            double housingAllowance = salary * 0.1;
+            double traspotationAllowance = salary * 0.03;
+            double netSalary = salary + housingAllowance + traspotationAllowance;
+            string netSalaryString = String.Format("{0:C}", netSalary);
+            return netSalaryString;
         }
     }
 }
+ 

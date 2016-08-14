@@ -13,14 +13,16 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            Console.WriteLine("Please Enter the number!");
+            double inputNumber = Convert.ToDouble(Console.ReadLine());
+            double result = SQRT(inputNumber);
+            Console.WriteLine("The square root of the number: {0} is {1:0.000}",inputNumber,result);
         }
 
         public static double SQRT(double x)
         {
-            //YOUR CODE HERE: return the square root of x
-            return 0;
-
+            double result = Math.Sqrt(x);
+            return result;
         }
     }
 }

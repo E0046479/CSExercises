@@ -17,9 +17,14 @@ namespace CSExercises
 
     public class ExA1
     {
+        public static String myName, myEmail;
+
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            myName = "Zaw Myo Htet";
+            myEmail = "e0046479@u.nus.edu";
+            Console.WriteLine(myName + "\n{0}", myEmail);
         }
+
     }
 }
