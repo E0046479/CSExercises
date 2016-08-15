@@ -24,25 +24,29 @@ namespace CSExercises
             {
                 if (age >= 40)
                 {
-                     Console.WriteLine("Good Morning Uncle {0}", name);
-                }else{
-                    Console.WriteLine("Good Morning Mr.{0}", name);
-                }
-               
-            }
-            else
-            {
-                if (age >= 40)
-                {
-                    Console.WriteLine("Good Morning Anty {0}", name);
+                    Console.WriteLine("Good Morning Uncle {0}", name);
                 }
                 else
                 {
-                    Console.WriteLine("Good Morning Ms.{0}", name);
+                    Console.WriteLine("Good Morning Mr. {0}", name);
+                }
+
+            }
+            else if (gender.ToUpper() == "F")
+            {
+                if (age >= 40)
+                {
+                    Console.WriteLine("Good Morning Aunty {0}", name);
+                }
+                else
+                {
+                    Console.WriteLine("Good Morning Ms. {0}", name);
                 }
             }
+            else
+            {
+                Console.WriteLine("Error");
+            }
         }
-
-        
     }
 }

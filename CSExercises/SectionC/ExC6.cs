@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 
 namespace CSExercises
 {
@@ -30,18 +30,48 @@ namespace CSExercises
         public static void Main(string[] args)
         {
             //YOUR CODE HERE - get user input, call the function and return the discounted price
+            int tvOrderQty = GetValidNumber("TV");
+            int dvdOrderQty = GetValidNumber("DVD");
+            int mp3OrderQty = GetValidNumber("MP3");
+            double discotedCost = CalculateTotalPrice(tvOrderQty, dvdOrderQty, mp3OrderQty);
 
+            Console.WriteLine("TV\tDVD\tMP3\tDiscounted Price"); // for paper output
+            Console.WriteLine("{0}\t{1}\t{2}\t{3}", tvOrderQty, dvdOrderQty, mp3OrderQty, discotedCost);
 
-
+            //Console.WriteLine(discotedCost); // for test code...
         }
 
         public static double CalculateTotalPrice(int tvQty, int dvdQty, int mp3Qty)
         {
-            //YOUR CODE HERE
-            return 0;
+            double totalPrice = 900 * tvQty + 500 * dvdQty + 700 * mp3Qty;
+            double orderAmount = 900 * tvQty + 500 * dvdQty;
+            double discountedPrice;
+            if (orderAmount > 5000 && orderAmount <= 10000)
+            {
+                discountedPrice = totalPrice - (orderAmount * 0.1);
+            }
+            else if (orderAmount > 10000)
+            {
+                discountedPrice = totalPrice - (orderAmount * 0.15);
+            }
+            else
+            {
+                discountedPrice = totalPrice;
+            }
+            return discountedPrice;
+        }
 
-
-
+        public static int GetValidNumber(string product)
+        {
+            int number;
+            bool isInt = false;
+            do
+            {
+                Console.WriteLine("Please enter the order number for {0}", product);
+                string input = Console.ReadLine();
+                isInt = int.TryParse(input, out number);
+            } while (!isInt);
+            return number;
         }
     }
 }

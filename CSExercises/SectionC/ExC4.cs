@@ -21,19 +21,34 @@ namespace CSExercises
         public static void Main(string[] args)
         {
 
-            //Your code here
-
-
-
+            double number;
+            bool isDouble = false;
+            do
+            {
+                Console.WriteLine("Please enter the distance that you travel with km!");
+                string input = Console.ReadLine();
+                isDouble = double.TryParse(input, out number);
+            } while (!isDouble);
+            double fare = CalculateFare(number);
+            Console.WriteLine(fare);
         }
 
         public static double CalculateFare(double distance)
         {
-            //YOUR CODE HERE
-            return 0;
-
-
-
+            double fare = 0;
+            if (distance <= 0.5)
+            {
+                fare = 2.4;
+            }
+            else if (distance > 0.5 && distance <= 9)
+            {
+                fare = 2.4 + (8.5 * 10 * 0.04);
+            }
+            else
+            {
+                fare = 2.4 + (8.5 * 10 * 0.04) + ((distance - 9) * 10 * 0.05);
+            }
+            return Math.Round(fare, 1);
         }
     }
 }

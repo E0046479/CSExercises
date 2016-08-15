@@ -17,11 +17,15 @@ namespace CSExercises
 
             if (gender.ToUpper() == "M")
             {
-                Console.WriteLine("Good Morning Mr.{0}", name);
+                Console.WriteLine("Good Morning Mr. {0}", name);
+            }
+            else if (gender.ToUpper() == "F")
+            {
+                Console.WriteLine("Good Morning Ms. {0}", name);
             }
             else
             {
-                Console.WriteLine("Good Morning Ms.{0}", name);
+                Console.WriteLine("Error");
             }
         }
     }
