@@ -14,17 +14,34 @@ namespace CSExercises
             Console.Write("Please enter a phrase: ");
             string phrase = Console.ReadLine();
 
-            string newphrase = ToTitleCase(phrase);
+            string newphrase = ToTitleCase(phrase.ToLower());
 
             Console.WriteLine(newphrase);
         }
 
         public static string ToTitleCase(string phrase)
         {
-            //YOUR CODE HERE
-            return null;
-
-
+            char[] punctuation = new Char[] { '.', ',', ';', ':', '!', '\'', '\"', '-', ' ' };
+            string[] wordsList = phrase.Split(punctuation);
+            string[] newTitleWordList = new string[wordsList.Length];
+            for (int i = 0; i < wordsList.Length; i++)
+            {
+                string word = wordsList[i];
+                char[] upperCharArray = new char[word.Length];
+                for (int j = 0; j < word.Length; j++)
+                {
+                    if (j == 0)
+                    {
+                        upperCharArray[j] = Char.ToUpper(word[j]);
+                    }
+                    else
+                    {
+                        upperCharArray[j] = word[j];
+                    }
+                }
+                newTitleWordList[i] = new string(upperCharArray);
+            }
+                return string.Join(" ",newTitleWordList);
         }
     }
 }

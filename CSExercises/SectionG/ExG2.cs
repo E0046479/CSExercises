@@ -19,7 +19,7 @@ namespace CSExercises
             Console.Write("Please enter a phrase: ");
             string phrase = Console.ReadLine();
 
-            if (IsPalindrome(phrase))
+            if (IsPalindrome(phrase.ToLower()))
             {
                 Console.WriteLine("Palindrome");
             }
@@ -31,12 +31,63 @@ namespace CSExercises
 
         public static bool IsPalindrome(string phrase)
         {
-            //YOUR CODE HERE
-            return false;
+            bool isPalindrome = false;
+            char[] punctuation = new Char[]{'.', ',',';',':','!','\'','\"','-',' '};
+            string[] wordsList = phrase.Split(punctuation);
 
+            for (int i = 0; i < wordsList.Length; i++)
+            {
+                string word = wordsList[i];
+                char[] charArray =  new Char[word.Length];
+                int size = word.Length - 1;
+                for (int j = word.Length - 1; j >= 0; j--)
+                {
+                    charArray[size - j] = word[j];
+                }
+                string temp = new String(charArray);
+                if (word.CompareTo(temp) == 0)
+                {
+                    isPalindrome = true;
+                    break;
+                }
+                else
+                {
+                    isPalindrome = false;
+                }
+            }
+                return isPalindrome;
+        }
 
+        public static bool IsPalindrome2(string phrase)
+        {
+            bool isPalindrome = false;
+            char[] punctuation = new Char[] { '.', ',', ';', ':', '!', '\'', '\"', '-', ' ' };
+            string[] wordsList = phrase.Split(punctuation);
 
-
+            for (int i = 0; i < wordsList.Length; i++)
+            {
+                string word = wordsList[i];
+                if (word.Length == 1)
+                {
+                    isPalindrome = true;
+                    break;
+                }
+                int k = word.Length - 1;
+                for(int j = 0; j < word.Length / 2; j++){
+                    if (word[j] == word[k])
+                    {
+                        isPalindrome = true;
+                    }
+                    else
+                    {
+                        isPalindrome = false;
+                        break;
+                    }
+                    k--;
+                }
+                
+            }
+            return isPalindrome;
         }
     }
 }
