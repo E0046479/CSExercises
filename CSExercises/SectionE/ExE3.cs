@@ -27,23 +27,11 @@ namespace CSExercises
             {
                 Console.WriteLine("Not Prime");
             }
-
-            //for (int i = 1; i < 100; i++)
-            //{
-            //    if (IsPrime(i))
-            //    {
-            //        Console.WriteLine("{0} Prime", i);
-            //    }
-            //}
-
         }
 
         public static bool IsPrime(int n)
         {
-            //is a natural number greater than 1 that has no positive divisors other than 1 and itself.
-            // n > 1 && n % i != 0 && n != i
             bool isPrime = true;
-
             for (int i = 2; i < n; i++)
             {
                 if (n % i == 0)
