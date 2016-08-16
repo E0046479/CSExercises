@@ -30,20 +30,22 @@ namespace CSExercises
 
         public static int CalculateFactorialInc(int n)
         {
-            //YOUR CODE HERE
-            return 0;
-
-
+            int result = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                result *= i;
+            }
+                return result;
         }
 
         public static int CalculateFactorialDec(int n)
         {
-            //YOUR CODE HERE
-            return 0;
-
-
+            int result = 1;
+            for (int i = n; i >= 1; i--)
+            {
+                result *= i;
+            }
+            return result;
         }
-
-
     }
 }

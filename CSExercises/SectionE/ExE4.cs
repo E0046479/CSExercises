@@ -15,25 +15,45 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            Console.Write("Please enter an integer: ");
-            int n = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Please enter an integer: ");
+            //int n = Convert.ToInt32(Console.ReadLine());
 
-            if (IsPerfectNumber(n))
+            //if (IsPerfectNumber(n))
+            //{
+            //    Console.WriteLine("Perfect Number");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Not Perfect Number");
+            //}
+            for (int i = 1; i < 1000; i++)
             {
-                Console.WriteLine("Perfect Number");
+                if (IsPerfectNumber(i))
+                {
+                    Console.WriteLine(i + " Perfect Number");
+                }
             }
-            else
-            {
-                Console.WriteLine("Not Perfect Number");
-            }
+               
         }
 
         public static bool IsPerfectNumber(int n)
         {
-            //YOUR CODE HERE
-            return false;
+            // ( 1 + 2 + 3 + 6 ) / 2 = 6.
+            bool isPerfect = false;
+            int sum = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                if (n % i == 0)
+                {
+                    sum += i;
+                }
+            }
 
-
+            if (sum % n == 0)
+            {
+                isPerfect = true;
+            }
+            return isPerfect;
         }
     }
 }

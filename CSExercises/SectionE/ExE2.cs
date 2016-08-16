@@ -22,7 +22,14 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            Console.WriteLine("{0}\t{1}\t\t{2}\t{3}\n------------------------------------------------------", "NO", "INVERSE", "SQUARE ROOT", "SQUARE");
+            for (int i = 1; i <= 10; i++)
+            {
+                double inverse = 1 / (i*1.0);
+                double squareRoot = Math.Sqrt(i);
+                double square = Math.Pow(i,2);
+                Console.WriteLine("{0:#.0}\t{1:0.0##}\t\t{2:0.0##}\t\t{3:0.0}", i, inverse, Math.Round(squareRoot, 3), square);
+            }
         }
     }
 }

@@ -19,8 +19,6 @@ namespace CSExercises
         {
             Console.Write("Please enter an integer: ");
             int n = Convert.ToInt32(Console.ReadLine());
-
-
             if (IsPrime(n))
             {
                 Console.WriteLine("Prime");
@@ -29,13 +27,36 @@ namespace CSExercises
             {
                 Console.WriteLine("Not Prime");
             }
+
+            //for (int i = 1; i < 100; i++)
+            //{
+            //    if (IsPrime(i))
+            //    {
+            //        Console.WriteLine("{0} Prime", i);
+            //    }
+            //}
+
         }
 
         public static bool IsPrime(int n)
         {
-            //YOUR CODE HERE
-            return false;
+            //is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+            // n > 1 && n % i != 0 && n != i
+            bool isPrime = true;
 
+            for (int i = 2; i < n; i++)
+            {
+                if (n % i == 0)
+                {
+                    isPrime = false;
+                }
+
+            }
+            if (n == 1)
+            {
+                isPrime = false;
+            }
+            return isPrime;
 
         }
     }
