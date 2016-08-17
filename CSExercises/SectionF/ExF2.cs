@@ -24,9 +24,18 @@ namespace CSExercises
 
         public static void Sort(int[] values)
         {
-            //YOUR CODE HERE
-            //Sort the list
-
+            for (int greenArrow = 0; greenArrow < values.Length - 1; greenArrow++)
+            {
+                for (int redArrow = greenArrow + 1; redArrow < values.Length; redArrow++)
+                {
+                    if (values[redArrow] > values[greenArrow])
+                    {
+                        int temp = values[redArrow];
+                        values[redArrow] = values[greenArrow];
+                        values[greenArrow] = temp;
+                    }
+                }
+            }
         }
 
     }

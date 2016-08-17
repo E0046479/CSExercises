@@ -22,10 +22,23 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
+            //int[] sales = new int[12]
+            //{1000,
+            //    2000,
+            //    3000,
+            //    4000,
+            //    5000,
+            //    6000,
+            //    7000,
+            //    8000,
+            //    9000,
+            //    10000,
+            //    11000,
+            //    12000};
             int[] sales = new int[12];
             for (int n = 0; n < 12; n++)
             {
-                Console.Write("Enter sales for month {0}: " , n);
+                Console.Write("Enter sales for month {0}: ", n);
                 sales[n] = Convert.ToInt32(Console.ReadLine());
             }
 
@@ -44,21 +57,44 @@ namespace CSExercises
         {
             //YOUR CODE HERE
             //Assign the result to minMonth, maxMonth and avg variable/parameter accordingly
-
-
+            minMonth = CalculateMinMonth(sales);
+            maxMonth = CalculateMaxMonth(sales);
+            avg = CalculateAvgSales(sales);
         }
 
         public static int CalculateMinMonth(int[] sales)
         {
-            //YOUR CODE HERE
-            return 0;
+            for (int greenArrow = 0; greenArrow < sales.Length - 1; greenArrow++)
+            {
+                for (int redArrow = greenArrow + 1; redArrow < sales.Length; redArrow++)
+                {
+                    if (sales[redArrow] < sales[greenArrow])
+                    {
+                        int temp = sales[redArrow];
+                        sales[redArrow] = sales[greenArrow];
+                        sales[greenArrow] = temp;
+                    }
+                }
+            }
+                return sales[0];
 
         }
 
         public static int CalculateMaxMonth(int[] sales)
         {
-            //YOUR CODE HERE
-            return 0;
+            for (int greenArrow = 0; greenArrow < sales.Length -1; greenArrow++)
+            {
+                for (int redArrow = greenArrow + 1; redArrow < sales.Length; redArrow++)
+                {
+                    if (sales[redArrow] > sales[greenArrow])
+                    {
+                        int temp = sales[redArrow];
+                        sales[redArrow] = sales[greenArrow];
+                        sales[greenArrow] = temp;
+                    }
+                }
+            }
+            return sales[0];
 
 
 
@@ -66,11 +102,14 @@ namespace CSExercises
 
         public static double CalculateAvgSales(int[] sales)
         {
-            //YOUR CODE HERE
-            return 0;
-
+            double avgSales = 0.0;
+            double sum = 0.0;
+            for (int greenArrow = 0; greenArrow < sales.Length; greenArrow++)
+            {
+                sum += sales[greenArrow];
+            }
+            avgSales = sum / sales.Length;
+            return avgSales;
         }
-
-
     }
 }
