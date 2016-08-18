@@ -11,22 +11,24 @@ namespace CSExercises
 
         public static int FindWord(string s1, string s2)
         {
-            int isFound = 0;
-            string smallS1 = s1.ToLower();
-            string smallS2 = s2.ToLower();
-            for (int i = 0; i < smallS1.Length; i++)
-            {
-                if (smallS2[0] == smallS1[i])
-                {
-                    string subString = smallS1.Substring(i, smallS2.Length);
-                    if (subString == smallS2)
-                    {
-                        isFound = i;
-                    }
-                }
-            }
+            //int isFound = 0;
+            //string smallS1 = s1.ToLower();
+            //string smallS2 = s2.ToLower();
+            //for (int i = 0; i < smallS1.Length; i++)
+            //{
+            //    if (smallS2[0] == smallS1[i])
+            //    {
+            //        string subString = smallS1.Substring(i, smallS2.Length);
+            //        if (subString == smallS2)
+            //        {
+            //            isFound = i;
+            //        }
+            //    }
+            //}
+            int isFound = s1.IndexOf(s2);
             return isFound;
         }
+
         //public static void Main(string[] args)
         //{
         //    string s1 = "The brown fox";

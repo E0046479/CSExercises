@@ -7,7 +7,6 @@ namespace CSExercises
     //3 dollars 50 cents (inputted as 3.50).  Further assume that we would 
     //always input nearest to 5 cents (i.e., values like 2.23 are not keyed in).  
     //The duty of your program is to dispense this amount (accurately!) using a combination of 
-    //coins.  We have coins of denomination 100, 50, 20, 10 and 5 cents.  More than one coin of 
     //a denomination can be used.  
     //Yeah I know what you are thinking – simply issue all five cent coins; right?  
     //Cannot!- easy but no challenge.  
@@ -22,10 +21,45 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            Console.Write("Enter the amount: ");
+            Console.Write("Enter the amount between  5 cents (inputted as 0.05) and 3 dollars 50 cents (inputted as 3.50) : ");
             double amount = Convert.ToDouble(Console.ReadLine());
 
-            //YOUR CODE HERE
+            int totalCent = (int) (Math.Round(amount,2) * 100);
+            int hundredCent, fiftyCent,tweentyCent,tenCent,fiveCent, remaider;
+
+            if (totalCent >= 100)
+            {
+                hundredCent = (totalCent / 100) * 100;
+                remaider = totalCent - hundredCent;
+                if (totalCent != hundredCent && remaider >= 50)
+                {
+                    fiftyCent = (remaider / 50) * 50;
+                    remaider = remaider - fiftyCent;
+                    if (remaider != fiftyCent && remaider >= 20)
+                    {
+
+                    }
+                }
+
+            }
+            else if (totalCent >= 50)
+            {
+
+            }
+            else if (totalCent >= 20)
+            {
+
+            }
+            else if (totalCent >= 10)
+            {
+
+            }
+            else if (totalCent >= 5)
+            {
+
+            }
+
+             
 
 
         }

@@ -1,4 +1,5 @@
-﻿namespace CSExercises
+﻿using System;
+namespace CSExercises
 {
     public class ExH3
     {
@@ -7,14 +8,21 @@
         //compare your answer with that of the built in function.
         public static string Hex(int i)
         {
-            //YOUR CODE HERE
-            return null;
+            string hexValue = i.ToString("X");
+            return hexValue;
 
 
 
 
 
 
+        }
+
+        public static void Main(string[] args)
+        {
+            int integerValue = 126;
+            string hexaValue = Hex(integerValue);
+            Console.WriteLine("{0} = {1}", integerValue, hexaValue);
         }
     }
 }
